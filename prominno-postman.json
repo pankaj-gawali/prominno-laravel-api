@@ -1,0 +1,292 @@
+{
+  "info": {
+    "_postman_id": "5021f03e-b9bb-4cee-9c61-30efa6da7ae6",
+    "name": "prominno",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51508585",
+    "_collection_link": "https://go.postman.co/collection/51508585-5021f03e-b9bb-4cee-9c61-30efa6da7ae6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "http://127.0.0.1:8000/api/admin/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@prominno.com\",\r\n  \"password\": \"admin123\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/admin/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "admin",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/admin/create-seller",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 1|61GeaSsfWsOfRJDG3nlWLCSpF9jousjbCNY73MDa534e964f",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Seller One\",\r\n  \"email\": \"seller1@test.com\",\r\n  \"mobile\": \"9999999999\",\r\n  \"country\": \"India\",\r\n  \"state\": \"Maharashtra\",\r\n  \"skills\": [\"PHP\", \"Laravel\", \"API\"],\r\n  \"password\": \"seller123\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/admin/create-seller",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "admin",
+            "create-seller"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/admin/sellers",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 2|eiMdN6uLGeMJESR1OwymzqnJL0qINkkQItPdchnE1d26b70f",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/admin/sellers?page=1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "admin",
+            "sellers"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/seller/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"seller1@test.com\",\r\n  \"password\": \"seller123\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/seller/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "seller",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/products",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 4|ffgOQFnVi0hfoqVmH7IF3WUTCmf7d6rkQ4tdVamZfa427400",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Mouse\",\r\n  \"description\": \"Test product\",\r\n  \"brands\": [\r\n    {\r\n      \"name\": \"Dell\",\r\n      \"detail\": \"Wireless Mouse\",\r\n      \"image\": \"dell.png\",\r\n      \"price\": 1000\r\n    },\r\n    {\r\n      \"name\": \"HP\",\r\n      \"detail\": \"Gaming Mouse\",\r\n      \"image\": \"hp.png\",\r\n      \"price\": 2000\r\n    }\r\n  ]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/products",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/products",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 4|ffgOQFnVi0hfoqVmH7IF3WUTCmf7d6rkQ4tdVamZfa427400",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/products?page=1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/products/1/pdf",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer 4|ffgOQFnVi0hfoqVmH7IF3WUTCmf7d6rkQ4tdVamZfa427400",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/products/1/pdf",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products",
+            "1",
+            "pdf"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
