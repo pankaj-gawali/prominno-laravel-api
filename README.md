@@ -4,6 +4,9 @@ This is a Laravel 12 based REST API project developed as an assignment.
 The project contains Admin and Seller modules with authentication,
 product management, multiple brands per product, and PDF generation.
 
+This is a Laravel 12 REST API project developed as part of an interview task.
+
+
 ---
 
 ## Tech Stack
@@ -14,56 +17,56 @@ product management, multiple brands per product, and PDF generation.
 - Postman
 
 ---
+## Features
 
-## Project Setup
+### Admin APIs
+- Admin Login (Token-based authentication)
+- Create Seller with validation
+- List Sellers with pagination
 
-1. Install dependencies
-composer install
+### Seller APIs
+- Seller Login (Token-based authentication)
+- Add Product with multiple Brands
+- Product Listing (Only logged-in seller products)
+- Delete Product (Only owner seller allowed)
+- View Product PDF
 
+### Product PDF Includes
+- Product Name
+- Product Description
+- Brand Name
+- Brand Image
+- Brand Price
+- Total Price (sum of all brand prices)
 
-2. Create `.env` file and configure database
-DB_DATABASE=prominno
-DB_USERNAME=root
-DB_PASSWORD=
+## Tech Stack
+- Laravel 12
+- Sanctum Authentication
+- MySQL
+- DomPDF
+- Postman
 
-3. Generate application key
-php artisan key:generate
+## Setup Instructions
 
-
-4. Run migrations
-php artisan migrate
-
-
-
-5. Import database SQL file
-database/prominno.sql
-
-
-
-6. Create storage link for image access
-php artisan storage:link
-
-
-7. Start the application
-php artisan serve
-
-
-
-## Admin Credentials
-Email: admin@prominno.com
-Password: admin123
-
-
+1. Clone repository
+2. Run `composer install`
+3. Copy `.env.example` to `.env`
+4. Configure database
+5. Run migrations:
+   `php artisan migrate --seed`
+6. Create storage link:
+   `php artisan storage:link`
+7. Run server:
+   `php artisan serve`
 
 ## Postman Collection
-Postman collection file is included in the project root:
-prominno-postman.json
+Postman collection is included:
+`prominno-postman.json`
 
-
-
-## Database
-Database SQL file is included:
-database/prominno.sql
+## Exception Handling
+- Validation Errors: 422
+- Unauthorized Access: 403
+- Invalid Credentials: 401
 
 
 
@@ -77,3 +80,6 @@ database/prominno.sql
 - Product Delete (Owner Only)
 - Product PDF View with Total Price
 - Role Based Authentication
+
+## Author
+Pankaj Gawali.
